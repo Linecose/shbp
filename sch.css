@@ -342,30 +342,3 @@ nav .logo1:hover {
 }
 
 /* MOBILE */
-@media(max-width: 700px) {
-    nav {
-        padding: 2%;
-    }
-    nav .logo1 {
-        font-size: 20px;
-    }
-    nav .logo1 img {
-        width: 40px;
-        height: 35px;
-    }
-    .menu-lnks ul li a {
-        font-size: 12px;
-    }
-    .menu-lnks ul li {
-        margin-left: 1rem;
-    }
-    .home {
-        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),
-                          url(image/homepage.jpg);
-        background-position: center;
-        background-size: cover;
-        color: #fff;
-        margin-top: -95px;
-        font-size: 20px;
-    }
-}
