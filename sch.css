@@ -1,9 +1,43 @@
 /* RESET */
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 1);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
+  }
+  
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+@keyframes appear{
+    from{
+        opacity: 0;
+        clip-path: inset(100% 100% 0 0);
+    }
+    to{
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
 }
 
 /* BODY */
@@ -17,7 +51,7 @@ nav {
     position: sticky;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -86,7 +120,7 @@ nav .logo1:hover {
 }
 
 .home {
-    background-image: linear-gradient( to left, rgba(0,0,0,0), rgba(0, 0, 0, .7),rgba(0,0,0,0.95), rgba(0, 0, 0, 1)),
+    background-image: linear-gradient( to left, rgba(0,0,0,0), rgba(0, 0, 0, .5),rgba(0,0,0,0.7), rgba(0, 0, 0, .9)),
                       url(image/homepage.jpeg);
     background-position: center;
     background-size: cover;
@@ -222,16 +256,56 @@ nav .logo1:hover {
     top: -200px;
     right: -400px;
 }
+#kurset{
+    background-image: linear-gradient(black, grey);
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 130px);
+    grid-row-gap: 200px;
+    grid-column-gap: 500px;
+    
+}
+#kurset img{
+    width: 90%;
+    height: 70%;
+}
+#kurset div{
+    margin-left: 75px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    width: 500px;
+    height: 35vh;
+    background: white;
+    color: black;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+#kurset div:hover{
+    font-size: 0px;
+}
+#kurset div:hover img{
+    transition: 0.6s;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
 
 #prog {
     background-image: linear-gradient(grey, black);
     height: 100vh;
     width: 100%;
+    display: grid;
 }
 #prog h1{
     position: relative;
     top: 20px;
-    margin-left: 50px;
+    margin-left: 25px;
 }
 #prog .nji{
     width: 300px;
@@ -354,7 +428,7 @@ nav .logo1:hover {
     margin-top: 35px;
     position: relative;
     top: 10px;
-    right: 175px;
+    right: 260px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -372,7 +446,7 @@ nav .logo1:hover {
 }
 
 /* MOBILE */
-@media(max-width: 700px) {
+@media(max-width: 800px) {
     nav {
         position: sticky;
         top: 0;
@@ -383,12 +457,12 @@ nav .logo1:hover {
         align-items: center;
         padding: 2% 6%;
         z-index: 1000;
-        backdrop-filter: blur(50px); /* efekt i bukur për transparency */
+        backdrop-filter: blur(50px); /* efekt i bukur për transparency*/
     }
     
     /* LOGO */
     nav .logo1 {
-        font-size: 15px;
+        font-size: clamp(15px, 4vw, 25px);
         font-weight: 600;
         text-decoration: none;
         color: white;
@@ -398,9 +472,9 @@ nav .logo1:hover {
     }
     
     nav .logo1 img {
-        width: 25px;
-        height: 20px;
-        margin-right: 10px;
+        width: 15%;
+        height: 10%;
+        margin-right: 3%;
     }
     
     nav .logo1:hover {
@@ -452,7 +526,7 @@ nav .logo1:hover {
             margin-top: -97px;
     
         /*full scren*/
-        min-height: 100vh;
+        height: 100vh;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -473,8 +547,8 @@ nav .logo1:hover {
     #a{
         text-align: center;
         position: relative;
-        top: 250px;
-        left: -150px;
+        top: 40%;
+        left: -41.67%;
         /*margin-right: 800px;
         margin-bottom: 150px;*/
         color: #fff;
@@ -484,7 +558,7 @@ nav .logo1:hover {
     #shkllnm{
         white-space: nowrap;
         position: relative;
-        top: 225px;
+        top: 35.1%;
         left: 0px;
         color: white;
         font-family: 'Times New Roman', Times, serif;
@@ -498,8 +572,8 @@ nav .logo1:hover {
     }
     .h1{
         position: relative;
-        top: 50px;
-        width: 330px;
+        top: 7.8%;
+        width: 91.7%;
         text-align: left;
     }
     .h1 h1{
@@ -518,7 +592,7 @@ nav .logo1:hover {
     }
     .h2{
         position: relative;
-        top: 120px;
+        top: 90px;
         width: 330px;
         text-align: left;
         right: -20px;
@@ -719,6 +793,7 @@ nav .logo1:hover {
         margin-left: 2px;
         width: 15px;
         color: #fff;
+
     }
     .java{
         display: none;
