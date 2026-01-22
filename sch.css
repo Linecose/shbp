@@ -115,7 +115,7 @@ nav .logo1:hover {
     width: 100%;
 }
 
-.menu-lnks ul li a:active{
+.menu-lnks ul li a::after:active{
     width: 100%;
 }
 
@@ -270,6 +270,7 @@ nav .logo1:hover {
 #kurset img{
     width: 90%;
     height: 70%;
+    border-radius: 10px;
 }
 #kurset div{
     margin-left: 75px;
