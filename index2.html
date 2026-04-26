@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SH.B.P</title>
+<link rel="shortcut icon" href="image/logo1.1-removebg-preview.png" type="image/x-icon">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<style>
+/* ════════════════════════════════════════
+   CSS ORIGJINAL — sch.css (1:1 rindërtuar)
+   ════════════════════════════════════════ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo1 {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo1 img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.menu-lnks ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-lnks ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.menu-lnks ul li a:hover {
+  color: #aaa;
+}
+
+.home {
+  background-image: url('https://linecose.github.io/shbp/image/i1.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.home > * {
+  position: relative;
+  z-index: 1;
+}
+
+#shkllnm {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+#a {
+  font-size: 2.5rem;
+  font-weight: bold;
+  max-width: 700px;
+}
+
+#info {
+  display: flex;
+  gap: 40px;
+  padding: 60px 80px;
+  background-color: white;
+}
+
+.h1, .h2 {
+  flex: 1;
+}
+
+#info h1 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+#info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+#info p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+#galeri {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 40px;
+  background-color: #222;
+}
+
+#galeri img {
+  width: 30%;
+  max-width: 320px;
+  border-radius: 8px;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+
+#shume {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: color 0.3s;
+}
+
+#shume:hover { color: white; }
+
+#kurset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 40px;
+  background-color: #f4f4f4;
+}
+
+#kurset div {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 22%;
+  min-width: 200px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+#kurset div h1 {
+  font-size: 1.2rem;
+  padding: 15px 10px;
+  color: #333;
+}
+
+#kurset div img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+#prog {
+  display: flex;
+  gap: 30px;
+  padding: 60px 80px;
+  background-color: white;
+}
+
+#prog div {
+  flex: 1;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 30px 25px;
+}
+
+#prog div h1 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+#prog div p {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #555;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+}
+
+#kontakt {
+  padding: 40px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+#location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+#location:hover { color: #aaa; }
+#l-icon { font-size: 1.2rem; }
+
+#email {
+  font-size: 0.95rem;
+  color: #ddd;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#email ion-icon { font-size: 1.2rem; }
+
+.java { display: flex; align-items: center; }
+
+.java a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.java a:hover { color: #aaa; }
+#icon { font-size: 1.5rem; }
+
+.fut { width: 100%; margin-top: 10px; }
+
+.fut ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.fut ul li a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s;
+}
+
+.fut ul li a:hover { color: white; }
+.fut ul p { color: #555; }
+
+#qyls {
+  width: 100%;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+
+/* ════════════════════════════════════════
+   RESPONSIVE — vetëm shtesë, nuk preket
+   asgjë nga origjinali
+   ════════════════════════════════════════ */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 98;
+}
+.nav-overlay.open { display: block; }
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+
+  .menu-lnks {
+    position: fixed;
+    top: 0; right: -100%; bottom: 0;
+    width: 220px;
+    background: #333;
+    padding: 65px 25px 25px;
+    z-index: 99;
+    transition: right 0.35s ease;
+  }
+  .menu-lnks.open { right: 0; }
+
+  .menu-lnks ul { flex-direction: column; gap: 0; }
+  .menu-lnks ul li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .menu-lnks ul li a { display: block; padding: 13px 0; }
+
+  #a { font-size: 1.6rem; padding: 0 20px; }
+  #shkllnm { font-size: 1rem; }
+
+  #info { flex-direction: column; padding: 40px 20px; gap: 25px; }
+
+  #galeri { padding: 25px 15px; gap: 10px; }
+  #galeri img { width: 100%; max-width: 100%; }
+
+  #kurset { padding: 40px 15px; gap: 12px; }
+  #kurset div { width: 45%; min-width: 130px; }
+
+  #prog { flex-direction: column; padding: 40px 20px; gap: 15px; }
+
+  #kontakt { padding: 30px 20px; gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  #kurset div { width: 100%; }
+  #a { font-size: 1.3rem; }
+}
+
+
+/* ════════════════════════════════════════
+   SCROLL ANIMATIONS — vetëm shtesë
+   ════════════════════════════════════════ */
+
+.sa {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.sa.visible { opacity: 1; transform: translateY(0); }
+
+.sa-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.sa-left.visible { opacity: 1; transform: translateX(0); }
+
+.sa-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.sa-right.visible { opacity: 1; transform: translateX(0); }
+
+.sa-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.sa-scale.visible { opacity: 1; transform: scale(1); }
+
+.d1 { transition-delay: 0.05s; }
+.d2 { transition-delay: 0.15s; }
+.d3 { transition-delay: 0.25s; }
+.d4 { transition-delay: 0.35s; }
+</style>
+</head>
+<body>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<nav>
+  <a href="#" class="logo1">
+    <img src="https://linecose.github.io/shbp/image/logo1.1-removebg-preview.png" alt="Logo">SH.B.P
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="menu-lnks" id="mobileMenu">
+    <ul>
+      <li><a href="#info" class="nav-link">Info</a></li>
+      <li><a href="#galeri" class="nav-link">Galeri</a></li>
+      <li><a href="#kurset" class="nav-link">Art-Zeje</a></li>
+      <li><a href="#prog" class="nav-link">Programet</a></li>
+      <li><a href="#kontakt" class="nav-link">Kontakti</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="home">
+  <p id="shkllnm">"Shkolla e Bashkuar Perondi"</p>
+  <h1 id="a">Shkolla është rrugëtimi drejt dijes!</h1>
+</section>
+
+<section id="info">
+  <div class="h1 sa-left">
+    <h1 id="b">Rreth "Shkolla e Bashkuar Perondi"</h1>
+    <p>"Shkolla e Bashkuar Perondi" është një institucion arsimor
+ i vendosur në fshatin Perondi, Bashkia Kuçovë, i cili
+ ofron arsimin e mesëm për nxënësit e zonës. Kjo shkollë
+ka një histori të pasur dhe një angazhim të fortë për
+zhvillimin e mësimit dhe arsimimin e brezave të rinj.
+Shkolla u rindërtua dhe rikonstruktua me kushte moderne
+për vitin shkollor 2024–2025, duke ofruar ambiente më
+ të sigurta dhe më të përshtatshme për nxënësit dhe stafin.
+ Me hapjen e dyerve të saj në këtë vit shkollor, shkolla
+ ka mundësuar që nxënësit të kenë klasa të ndriçuara, të
+ pastra dhe një ambient të përshtatshëm për mësim.</p>
+  </div>
+  <div class="h2 sa-right">
+    <h2>Pse ka qene quajtur "Llazar Kuli"?</h2>
+    <p> Sot "Shkolla e Bashkuar Perondi" dikur e quajtur
+"Llazar Kuli" ishte emëruar për të nderuar
+ një figurë të shquar lokale, Llazar Kulin, i cili
+ ishte një dëshmor që kontribuoi në zhvillimin e
+ komunitetit. Ky emër është dhënë për të ruajtur
+ kujtimin dhe respektin për ata që kanë dhënë jetën
+ dhe mundin e tyre për atdhenë dhe për komunitetin.
+ Shkolla synon që, përmes mësimit dhe arsimimit të
+ brezave të rinj, të vazhdojë traditën e këtij
+ kontributi dhe të formojë qytetarë të përgjegjshëm.</p>
+  </div>
+</section>
+
+<section id="galeri">
+  <img src="https://linecose.github.io/shbp/image/i1.jpeg" id="i1" class="sa d1">
+  <img src="https://linecose.github.io/shbp/image/i2.jpeg" id="i2" class="sa d2">
+  <img src="https://linecose.github.io/shbp/image/i3.jpeg" id="i3" class="sa d3">
+  <a href="https://www.facebook.com/profile.php?id=61558485361017&sk=photos_by" id="shume" target="_blank" rel="noopener" class="sa">Me shume...</a>
+</section>
+
+<section id="kurset">
+  <div class="teater sa-scale d1">
+    <h1>Teater</h1>
+    <img src="https://linecose.github.io/shbp/image/kurset/t.cover.jpeg">
+  </div>
+  <div class="qendisje sa-scale d2">
+    <h1>Qendistari</h1>
+    <img src="https://linecose.github.io/shbp/image/kurset/q.cover.jpeg">
+  </div>
+  <div class="a-k sa-scale d3">
+    <h1>Agrikulture</h1>
+    <img src="https://linecose.github.io/shbp/image/kurset/agku.cover.jpeg">
+  </div>
+  <div class="pik sa-scale d4">
+    <h1>Pikture</h1>
+    <img src="https://linecose.github.io/shbp/image/kurset/pik.cover.jpeg">
+  </div>
+</section>
+
+<section id="prog">
+  <div class="nji sa d1">
+    <h1>Arsimi fillor</h1>
+    <p>Programi i arsimit fillor synon të sigurojë themelet e forta të dijes dhe zhvillimin e aftësive bazë akademike, sociale dhe personale të nxënësve. Ai fokusohet në ndërtimin e shkathtësive të leximit, shkrimit, llogaritjes dhe komunikimit, si dhe në zhvillimin e të menduarit kritik dhe krijues. Përmes një mjedisi mbështetës dhe gjithëpërfshirës, programi nxit formimin e vlerave morale, qytetare dhe kulturore, duke përgatitur nxënësit për të mësuar gjatë gjithë jetës dhe për të vazhduar me sukses ciklet e mëtejshme të arsimit.</p>
+  </div>
+  <div class="di sa d2">
+    <h1>Arsimi i Mesem i Ulet</h1>
+    <p>Programi i arsimit 9-vjeçar ka për qëllim ofrimin e një arsimi gjithëpërfshirës dhe të balancuar, i cili siguron thellimin gradual të njohurive themelore dhe zhvillimin e aftësive intelektuale, emocionale dhe sociale të nxënësve. Programi synon të forcojë mendimin kritik, aftësitë analitike dhe shprehitë e të nxënit të pavarur, duke përgatitur nxënësit për sfidat akademike dhe personale të arsimit të mesëm. Njëkohësisht, ai kontribuon në formimin e individëve të përgjegjshëm, aktivë dhe të ndërgjegjshëm për rolin e tyre në shoqëri.</p>
+  </div>
+  <div class="tri sa d3">
+    <h1>Arsimi i Mesem i Lart</h1>
+    <p>Programi i arsimit të mesëm të përgjithshëm synon zhvillimin e njohurive të avancuara akademike dhe të aftësive të thelluara mësimore, duke i përgatitur nxënësit për studime të larta dhe për orientim të suksesshëm profesional. Ai fokusohet në zhvillimin e të menduarit kritik, krijues dhe shkencor, në përvetësimin e aftësive kërkimore dhe në ndërtimin e pavarësisë intelektuale. Përmes profileve të ndryshme mësimore, programi mbështet formimin e qytetarëve aktivë, të përgjegjshëm dhe të aftë për t'u përshtatur me sfidat e shoqërisë moderne dhe tregut të punës.</p>
+  </div>
+</section>
+
+<footer>
+  <section id="kontakt">
+    <a href="https://www.google.com/maps/place/40%C2%B047'11.7%22N+19%C2%B054'49.1%22E/@40.786583,19.9123485,315m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d40.786581!4d19.913636?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank" rel="noopener" id="location"><ion-icon name="location-outline" id="l-icon"></ion-icon>Perondi, Bashkia Kucove</a>
+    <div id="email">
+      <p><ion-icon name="mail-outline"></ion-icon>shkollaperondi2025@gmail.com</p>
+    </div>
+    <div class="java">
+      <a href="https://www.instagram.com/shkollaebashkuarperondi?igsh=YnU3MHp1NzRscHpj" target="_blank" rel="noopener"><ion-icon name="logo-instagram" id="icon"></ion-icon></a>
+    </div>
+    <div class="java">
+      <a href="https://www.facebook.com/people/Shmb-Perondi/pfbid02XrZKxePxVfuVMsxi2SyKpAMEQePzyhFj7k4ohpPHCBC1dimyYjszxuJBjgNTAkvFl/" target="_blank" rel="noopener"><ion-icon name="logo-facebook" id="icon"></ion-icon></a>
+    </div>
+    <div class="java">
+      <a href="#"><ion-icon name="globe-outline" id="icon"></ion-icon></a>
+    </div>
+    <div class="fut">
+      <ul>
+        <li><a href="policies/p.html#privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+        <p>|</p>
+        <li><a href="policies/p.html#terms" target="_blank" rel="noopener">Terms</a></li>
+        <p>|</p>
+        <li><a href="policies/p.html#cookies" target="blank" rel="noopener">Cookies </a></li>
+      </ul>
+    </div>
+    <p id="qyls">© 2026 Gerjon Shkurti. All rights reseved.</p>
+  </section>
+</footer>
+
+<script>
+  /* HAMBURGER */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const navOverlay = document.getElementById('navOverlay');
+
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    navOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    navOverlay.classList.toggle('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  navOverlay.addEventListener('click', closeMenu);
+  document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeMenu));
+
+  /* SCROLL ANIMATIONS */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.sa, .sa-left, .sa-right, .sa-scale')
+    .forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
